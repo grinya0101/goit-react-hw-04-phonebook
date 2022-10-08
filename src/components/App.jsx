@@ -18,10 +18,7 @@ export default function App() {
       ...data
     }
     
-    setContacts((prev) => {
-      return [...prev, newContacts]
-      
-    })
+    setContacts((prev) => [...prev, newContacts])
 
   
   }
@@ -29,7 +26,7 @@ export default function App() {
 
   const removeContacts = (id) => {
     setContacts((prev) => {
-      const newContacts = prev.contacts.filter((item) => item.id !== id)
+      const newContacts = prev.filter((item) => item.id !== id)
 
       return newContacts
       
