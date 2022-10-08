@@ -19,9 +19,8 @@ export default function App() {
     }
     
     setContacts((prev) => {
-      return {
-        contacts: [...prev, newContacts]
-      }
+      return [...prev, newContacts]
+      
     })
 
   

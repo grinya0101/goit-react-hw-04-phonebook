@@ -1,6 +1,6 @@
 export default function NumberList({ items, removeContacts }) {
   console.log(items);
-    const elements = items.map(({name, number, id}) => {
+    const elements = items.map((name, number, id) => {
       
       
       
