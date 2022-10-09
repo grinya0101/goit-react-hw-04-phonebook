@@ -1,13 +1,24 @@
 import NumberList from "./NumberList/NumberList"
 import { nanoid } from "nanoid";
 import FormAddNumber from "./FormAddNumber/FormAddNumber";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
 export default function App() {
-  const [contacts, setContacts] = useState([])
+  const [contacts, setContacts] = useState(() => {
+    const value = JSON.parse(localStorage.getItem("contacts"));
+    return value ?? [];
+  })
   const [filter, setFilter] = useState('')
+
+  useEffect(() =>{
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+
+  }, [contacts])
+
+
+
 
   const addContacts = (data) => {
     if(isDuplicate(data)) {
